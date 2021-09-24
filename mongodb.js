@@ -7,10 +7,13 @@ const MongoClient = mongodb.MongoClient
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
-MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error,client) => {
+const task1 = 'Get a haircut'
+const task2 = 'Take a dump'
+
+MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) {
         return console.log('unable to connect to db')
-    } 
+    }
 
     const db = client.db(databaseName)
 
@@ -43,17 +46,18 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error,client) => 
     //     console.log(result.ops)
 
     // })
-// 
+
+    // 
+
+
+
     db.collection('tasks').insertMany([
         {
-            description: 'this is an easy task',
+            description: task1,
             completed: true
         },
         {
-            description: 'this medium task',
-            completed: false
-        }, {
-            description: 'very tricky task',
+            description: task2,
             completed: false
         }
     ], (error, result) => {
@@ -64,6 +68,5 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error,client) => 
         console.log(result.ops)
         console.log(result.insertedCount)
     })
-
 
 })
