@@ -22,6 +22,26 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
 
     const db = client.db(databaseName)
 
+    db.collection('users').updateOne({
+        _id: new ObjectID("614db571d03033336074f015")
+    },
+        {
+            // $set: {
+            //     lastname: 'taj mahal badabad'
+            // }
+             $currentDate: { 
+                lastModified: true }
+
+        }).then((result) => {
+            console.log(result)
+        }).catch((error) => {
+            console.log(error)
+        })
+
+
+
+
+
     // db.collection('users').findOne({ _id: new ObjectID("614da5094ecda0262ca2cb6f") }, (error, user) => {
     //     if (error) {
     //         return console.log('unable to fetch')
@@ -31,35 +51,35 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
     // })
 
     // db.collection('users').find( { lastname: 'badlandabad' } ).toArray((error,users) => {
-       
+
     //     console.log(users)
     // })
 
     // db.collection('users').find( { lastname: 'badlandabad' } ).count((error,count) => {
-       
+
     //     console.log(count)
     // })
 
-    db.collection('tasks').findOne({ _id: new ObjectID("614da15b2b28960d6433ee1b") }, (error, task) => {
-        if (error) {
-            console.log('no task id found')
-        }
+    // db.collection('tasks').findOne({ _id: new ObjectID("614da15b2b28960d6433ee1b") }, (error, task) => {
+    //     if (error) {
+    //         console.log('no task id found')
+    //     }
 
-        console.log(task)
-    })
+    //     console.log(task)
+    // })
 
-    db.collection('tasks').find( { completed: false }).toArray((error, tasks) => {
-        if (error) {
-            console.log('no uncompoleted tasks')
-        }
+    // db.collection('tasks').find( { completed: false }).toArray((error, tasks) => {
+    //     if (error) {
+    //         console.log('no uncompoleted tasks')
+    //     }
 
-        console.log(tasks)
-    })
-
-
+    //     console.log(tasks)
+    // })
 
 
- 
+
+
+
 
     // db.collection('users').insertOne({
     //     firstname: 'Taj mahal ',
