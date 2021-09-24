@@ -1,16 +1,24 @@
 // CRUD create, read, update and delete
 
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
+// const mongodb = require('mongodb')
+// const MongoClient = mongodb.MongoClient
+// const ObjectID = mongodb.ObjectID
+
+// This above can be Simplied into below! Destructuring
+const  { MongoClient , ObjectID } = require('mongodb')
 
 //connection to db
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
+const id = new ObjectID()
+console.log(id)
+
 const task1 = 'Get a haircut'
 const task2 = 'Take a dump'
 
-MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
+
+MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology:true }, (error, client) => {
     if (error) {
         return console.log('unable to connect to db')
     }
@@ -51,22 +59,24 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
 
 
-    db.collection('tasks').insertMany([
-        {
-            description: task1,
-            completed: true
-        },
-        {
-            description: task2,
-            completed: false
-        }
-    ], (error, result) => {
-        if (error) {
-            return console.log('cannot add many tasks')
-        }
+    // db.collection('tasks').insertMany([
+    //     {
+    //         description: task1,
+    //         completed: true
+    //     },
+    //     {
+    //         description: task2,
+    //         completed: false
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         return console.log('cannot add many tasks')
+    //     }
 
-        console.log(result.ops)
-        console.log(result.insertedCount)
-    })
+    //     console.log(result.ops)
+    //     console.log(result.insertedCount)
+    // })
+
+  
 
 })
