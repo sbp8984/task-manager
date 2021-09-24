@@ -3,7 +3,7 @@
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
 
-//connection
+//connection to db
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
