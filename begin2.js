@@ -76,3 +76,5 @@ console.log(difference); // ["a", "d", "e", "f"]
 console.log('D - Difference between C and prefB')
 console.log(difference1)
 
+//
+
