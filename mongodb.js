@@ -38,7 +38,6 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
             console.log(error)
         })
 
-//
 
 
     // db.collection('users').findOne({ _id: new ObjectID("614da5094ecda0262ca2cb6f") }, (error, user) => {
