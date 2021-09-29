@@ -40,8 +40,6 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
 
 
 
-
-
     // db.collection('users').findOne({ _id: new ObjectID("614da5094ecda0262ca2cb6f") }, (error, user) => {
     //     if (error) {
     //         return console.log('unable to fetch')
@@ -49,6 +47,7 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
 
     //     console.log(user)
     // })
+    //
 
     // db.collection('users').find( { lastname: 'badlandabad' } ).toArray((error,users) => {
 
