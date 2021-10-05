@@ -20,7 +20,7 @@ const p2_end = '2021-10-06'
 let p2_dates = []
 
 
-// Function
+// Function task
 
 const addDays = (date, days = 1) => {
   const result = new Date(date);
