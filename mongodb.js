@@ -99,20 +99,20 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
 
 
 
-    db.collection('users').insertMany([
-        {
-            name: 'Bob',
-            age: 44
-        }, {
-            name: 'Gunthuner',
-            age: 81
-        }
-    ], (error,result) => {
-        if (error) {
-            return console.log('cannot insert many collections')
-        }
-        console.log(result.insertedCount)
-        console.log(result.ops)
+    // db.collection('users').insertMany([
+    //     {
+    //         name: 'Bob',
+    //         age: 44
+    //     }, {
+    //         name: 'Gunthuner',
+    //         age: 81
+    //     }
+    // ], (error,result) => {
+    //     if (error) {
+    //         return console.log('cannot insert many collections')
+    //     }
+    //     console.log(result.insertedCount)
+    //     console.log(result.ops)
 
 })
 
