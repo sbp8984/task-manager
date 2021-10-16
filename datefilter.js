@@ -59,6 +59,7 @@ const toRemove1 = new Set(pBpref.map(date => date.toISOString().slice(0,10)))
 // const toRemove = new Set(['b', 'c', 'g']);
 
 
+const onet = console.log('dsd')
 
 //console.log(myArray)
 //console.log(toRemove)
